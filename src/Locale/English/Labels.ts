@@ -62,9 +62,8 @@ export const LABELS_ENGLISH: LabelRegistry = {
 
     ui: {
         APP_TITLE: "Bang!",
-        APP_WELCOME: "Welcome to bang.salvoserver.it,\nBang! online with all expansions!\nPlay now for free with your friends!",
-        DISCORD_LINK: "Join the official discord",
-        DONATE_PAYPAL: "Donate now",
+        APP_WELCOME: "Welcome to play.oxyda.net,\nBang! online with all expansions!\nPlay now for free with your friends!",
+        DISCLAIMER: "This offer is independent from dV Giochi - daVinci Editrice S.r.l.\ndV Giochi - daVinci Editrice S.r.l. is in no way responsible for the contents.",
         LOADING: "Loading...",
         RECONNECTING: "Reconnecting...", 
         UNKNOWN_CARD: "(Unknown card)",
