@@ -25,7 +25,8 @@ export default function HomeScene({ username, setUsername, handleConnect }: Conn
       <ul className='text-xl font-semibold text-center mb-2'>
         {getLabel('ui', 'APP_WELCOME').split('\n').map((line, i) => <li key={i}>{line}</li>)}
       </ul>
-      <ul className='text-xl font-semibold text-center mb-2'>
+      <br /><br />
+      <ul className='text-l font-semibold text-center mb-2'>
         {getLabel('ui', 'DISCLAIMER').split('\n').map((line, i) => <li key={i}>{line}</li>)}
       </ul>
     </div>
