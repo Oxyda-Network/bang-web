@@ -1,6 +1,6 @@
 import { ChangeEvent, useRef } from 'react';
 import getLabel from '../Locale/GetLabel';
-import BangLogo from '../../Components/BangLogo';
+import BangLogo from './BangLogo';
 import AppSettings from '../Model/AppSettings';
 import { isLobbyOwner, SceneState } from '../Model/SceneState';
 import { BangConnection } from '../Model/UseBangConnection';
