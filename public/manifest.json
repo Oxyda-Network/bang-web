@@ -8,11 +8,6 @@
       "type": "image/x-icon"
     },
     {
-      "src": "smallbang.png",
-      "type": "image/png",
-      "sizes": "64x50"
-    },
-    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
