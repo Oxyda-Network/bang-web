@@ -70,7 +70,7 @@ export const LABELS_ENGLISH: LabelRegistry = {
         UNKNOWN_PLAYER: "(Unknown player)",
         USERNAME_EMPTY: "(Empty username)",
         STATUS_GAME_OVER: "Game Over",
-        LABEL_USERNAME: "User Name",
+        LABEL_USERNAME: "Username",
         LABEL_LOBBY_NAME: "Lobby Name",
         LABEL_LOBBY_PASSWORD: "Password",
         PROMPT_LOBBY_PASSWORD: "Insert the lobby password",

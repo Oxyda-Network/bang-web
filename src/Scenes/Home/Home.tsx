@@ -22,11 +22,11 @@ export default function HomeScene({ username, setUsername, handleConnect }: Conn
   return <div className="flex flex-col items-center">
     <div className='flex flex-col items-center mb-4'>
       <BangLogo />
-      <ul className='text-xl font-semibold text-center mb-2'>
+      <ul className='text-l font-semibold text-center mb-2'>
         {getLabel('ui', 'APP_WELCOME').split('\n').map((line, i) => <li key={i}>{line}</li>)}
       </ul>
-      <br /><br />
-      <ul className='text-l font-semibold text-center mb-2'>
+      <br /><br /><br /><br />
+      <ul className='text-xl font-bold text-center mb-2'>
         {getLabel('ui', 'DISCLAIMER').split('\n').map((line, i) => <li key={i}>{line}</li>)}
       </ul>
     </div>
