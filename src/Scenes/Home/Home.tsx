@@ -3,7 +3,6 @@ import Button from '../../Components/Button';
 import getLabel from '../../Locale/GetLabel';
 import BangLogo from '../../Components/BangLogo';
 import { MAX_USERNAME_LENGTH } from '../../Model/AppSettings';
-import Env from '../../Model/Env';
 
 export interface ConnectProps {
   username?: string;
