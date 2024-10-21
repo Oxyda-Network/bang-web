@@ -63,7 +63,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
     <nav className="border-gray-200 bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1.5 md:p-4">
         <div className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white"><img src='/media/smallbang.png'></img></span>
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">{getLabel('ui', 'APP_TITLE')}</span>
         </div>
         { (scene.type === 'lobby' || scene.type === 'game') && <div className="text-blue-500 font-medium whitespace-nowrap overflow-x-hidden text-ellipsis">
           { scene.lobbyName }
