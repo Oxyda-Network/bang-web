@@ -21,13 +21,10 @@ export default function HomeScene({ username, setUsername, handleConnect }: Conn
   return <div className="flex flex-col items-center">
     <div className='flex flex-col items-center mb-4'>
       <BangLogo />
-      <ul className='text-l font-semibold text-center mb-2'>
+      <ul className='text-l font-bold text-center mb-2'>
         {getLabel('ui', 'APP_WELCOME').split('\n').map((line, i) => <li key={i}>{line}</li>)}
       </ul>
-      <br /><br /><br /><br />
-      <ul className='text-xl font-bold text-center mb-2'>
-        {getLabel('ui', 'DISCLAIMER').split('\n').map((line, i) => <li key={i}>{line}</li>)}
-      </ul>
+      <br /><br />
     </div>
     <form onSubmit={handleConnectEvent} className="flex flex-col items-center">
     <label htmlFor="username" className="font-bold text-xl">{getLabel('ui', 'LABEL_USERNAME')}</label>
@@ -51,5 +48,11 @@ export default function HomeScene({ username, setUsername, handleConnect }: Conn
     />
     <Button type="submit" color="green">{getLabel('ui', 'BUTTON_CONNECT')}</Button>
   </form>
+  <div className='flex flex-col items-center mb-4'>
+      <br /><br /><br /><br />
+      <ul className='text-xl font-bold text-center mb-2'>
+        {getLabel('ui', 'DISCLAIMER').split('\n').map((line, i) => <li key={i}>{line}</li>)}
+      </ul>
+    </div>
   </div>
 }
