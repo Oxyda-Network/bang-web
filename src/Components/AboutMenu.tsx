@@ -14,7 +14,7 @@ export interface AboutMenuProps {
   children: ReactNode;
 }
 
-export default function AboutMenu({ username, setUsername, children }: AboutMenuProps) {
+export default function AboutMenu({ children }: AboutMenuProps) {
   return (
     <div className='about-menu z-50
     absolute top-10 right-0

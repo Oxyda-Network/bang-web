@@ -90,25 +90,6 @@ function Header({ scene, settings, connection }: HeaderProps) {
               <AboutMenuItem onClick={handleToggleSounds}>
                 {getLabel('ui', settings.muteSounds ? 'BUTTON_ENABLE_SOUNDS' : 'BUTTON_DISABLE_SOUNDS')}
               </AboutMenuItem>
-              {scene.type === 'game' && isLobbyOwner(scene.lobbyState) && (
-                <AboutMenuItem onClick={closeMenuAnd(handleReturnLobby)}>
-                  {getLabel('ui', 'BUTTON_RETURN_LOBBY')}
-                </AboutMenuItem>
-              )}
-              {scene.type === 'lobby' && (
-                <AboutMenuItem onClick={handleToggleSpectate}>
-                  {getLabel('ui', isSpectator ? 'BUTTON_SPECTATE_OFF' : 'BUTTON_SPECTATE_ON')}
-                </AboutMenuItem>
-              )}
-              {(scene.type === 'game' || scene.type === 'lobby') ? (
-                <AboutMenuItem onClick={closeMenuAnd(handleLeaveLobby)}>
-                  {getLabel('ui', 'BUTTON_LEAVE_LOBBY')}
-                </AboutMenuItem>
-              ) : (
-                <AboutMenuItem onClick={closeMenuAnd(handleDisconnect)}>
-                  {getLabel('ui', 'BUTTON_DISCONNECT')}
-                </AboutMenuItem>
-              )}
             </AboutMenu>
           )}
           <button
