@@ -8,13 +8,15 @@ const Env = (() => {
         throw new Error('missing BANG_SERVER_URL environment variable');
     }
 
-    let bangTrackingUrl = bangServerUrl.replace('wss://', 'https://').replace('ws://', 'http://');
-    if (!bangTrackingUrl.endsWith('/')) {
-        bangTrackingUrl += '/';
+    let bangServerBaseUrl = bangServerUrl.replace('wss://', 'https://').replace('ws://', 'http://');
+    if (!bangServerBaseUrl.endsWith('/')) {
+        bangServerBaseUrl += '/';
     }
-    bangTrackingUrl += 'tracking';
+    
+    const bangTrackingUrl = bangServerBaseUrl + 'tracking';
+    const bangImageUrl = bangServerBaseUrl + 'image';
 
-    return { bangServerUrl, bangTrackingUrl, language } as const;
+    return { bangServerUrl, bangTrackingUrl, bangImageUrl, language, discordLink, paypalDonateLink } as const;
 })();
 
 export default Env;

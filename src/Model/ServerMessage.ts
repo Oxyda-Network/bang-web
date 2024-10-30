@@ -1,5 +1,4 @@
 import { GameOptions, GameUpdate } from "../Scenes/Game/Model/GameUpdate";
-import { ImagePixels } from "../Utils/ImageSerial";
 
 export type Empty = Record<string, never>;
 
@@ -13,7 +12,7 @@ export interface ClientAccepted {
 
 export type LobbyStateEnum = 'waiting' | 'playing' | 'finished';
 
-export interface LobbyUpdate {
+export interface LobbyValue {
     lobby_id: LobbyId;
     name: string;
     num_players: number;
@@ -38,16 +37,12 @@ export type LobbyChatFlag = 'is_read' | 'translated';
 
 export type LobbyUserFlag = 'disconnected' | 'spectator' | 'muted';
 
-export interface LobbyUserUpdate {
+export interface UserValue {
     user_id: UserId;
     username: string;
+    propic: string | null;
     flags: LobbyUserFlag[];
     lifetime: Milliseconds;
-}
-
-export interface LobbyUserPropic {
-    user_id: UserId;
-    propic: ImagePixels | null;
 }
 
 export type LobbyChatArg =
@@ -66,12 +61,11 @@ export type ServerMessage =
     {ping: Empty} |
     {client_accepted: ClientAccepted} |
     {lobby_error: string} |
-    {lobby_update: LobbyUpdate} |
+    {lobby_update: LobbyValue} |
     {lobby_entered: LobbyEntered} |
     {lobby_game_options: GameOptions} |
     {lobby_removed: LobbyRemoved} |
-    {lobby_user_update: LobbyUserUpdate} |
-    {lobby_user_propic: LobbyUserPropic} |
+    {lobby_user_update: UserValue} |
     {lobby_kick: Empty} |
     {lobby_chat: ChatMessage} |
     {game_update: GameUpdate} |
