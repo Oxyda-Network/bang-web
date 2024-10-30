@@ -11,7 +11,7 @@ export function AboutMenuItem({ href, children }: AboutMenuItemProps) {
   return <li><a href={href} className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white" target="_blank" rel="noopener noreferrer">{children}</a></li>;
 }
 
-export interface AboutMenuMenuProps {
+export interface AboutMenuProps {
   children: ReactNode;
 }
 
