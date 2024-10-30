@@ -56,6 +56,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
   const closeMenuAnd = (fn: () => void) => {
     return () => {
       setIsMenuOpen(false);
+      setIsAboutMenuOpen(false);
       fn();
     };
   };
