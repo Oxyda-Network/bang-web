@@ -41,7 +41,7 @@ export const LABELS_ENGLISH: LabelRegistry = {
         thebullet:              "Dynamite Box",
         dodgecity:              "Dodge City",
         valleyofshadows:        "Valley of Shadows",
-        udolistinu:             "Valley Of Shadows (original version)",
+        udolistinu:             "Valley of Shadows (Udoli Stinu - original czech version)",
         greattrainrobbery:      "The Great Train Robbery",
         wildwestshow:           "Wild West Show",
         goldrush:               "Gold Rush",
@@ -64,8 +64,9 @@ export const LABELS_ENGLISH: LabelRegistry = {
 
     ui: {
         APP_TITLE: "Bang!",
-        APP_WELCOME: "Welcome to play.oxyda.net,\nBang! online with all expansions!\nPlay now for free with your friends!",
+        APP_WELCOME: "Welcome to Bang! online with all expansions!\nPlay now for free with your friends!",
         DISCLAIMER: "This offer is independent from dV Giochi - daVinci Editrice S.r.l.\ndV Giochi - daVinci Editrice S.r.l. is in no way responsible for the contents.",
+        COPYRIGHTS: "BANG! is a - registered - trademark of daVinci Editrice S.r.l.\ndV Giochi is a - registered - trademark of daVinci Editrice S.r.l.",
         LOADING: "Loading...",
         RECONNECTING: "Reconnecting...", 
         UNKNOWN_CARD: "(Unknown card)",
