@@ -8,6 +8,7 @@ import { loadFile, PROPIC_SIZE, serializeImage } from '../Utils/ImageSerial';
 import useCloseOnLoseFocus from '../Utils/UseCloseOnLoseFocus';
 import UserMenu, { UserMenuItem } from './UserMenu';
 import AboutMenu, { AboutMenuItem } from './AboutMenu';
+import PDFViewer from './PDFViewer';
 
 export interface HeaderProps {
   scene: SceneState;
@@ -17,6 +18,8 @@ export interface HeaderProps {
 
 function Header({ scene, settings, connection }: HeaderProps) {
   const inputFile = useRef<HTMLInputElement>(null);
+
+  const [pdfFile, setPdfFile] = useState<string | null>(null);
   
   const [isMenuOpen, setIsMenuOpen, menuRef] = useCloseOnLoseFocus<HTMLDivElement>();
   const [isAboutMenuOpen, setIsAboutMenuOpen, AboutMenuRef] = useCloseOnLoseFocus<HTMLDivElement>();
@@ -61,6 +64,11 @@ function Header({ scene, settings, connection }: HeaderProps) {
     };
   };
 
+  const handleAboutMenuItemClick = (href: string) => {
+    setPdfFile(href);
+    setIsAboutMenuOpen(false);
+  };
+
   return (
     <nav className="border-gray-200 bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1.5 md:p-4">
@@ -87,8 +95,8 @@ function Header({ scene, settings, connection }: HeaderProps) {
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
-              <AboutMenuItem href="https://example.com">{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
-              <AboutMenuItem href="https://example.com">{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
+              <AboutMenuItem href="#" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
+              <AboutMenuItem href="/documents/bangpressrelease-fairusage-eng.pdf" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
           { scene.type !== 'home' && scene.type !== 'loading' && <div className='flex relative' ref={menuRef}>
@@ -110,6 +118,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
           </div>}
         </div>
       </div>
+      {pdfFile && <PDFViewer file={pdfFile} onClose={() => setPdfFile(null)} />}
     </nav>
   )
 }

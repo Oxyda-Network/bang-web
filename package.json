@@ -17,6 +17,9 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-use-event-hook": "^0.9.6",
+    "react-pdf": "^5.7.2",
+    "@react-pdf-viewer/core": "^2.8.0",
+    "@react-pdf-viewer/default-layout": "^2.8.0",
     "typescript": "^5.3.3",
     "web-vitals": "^2.1.4",
     "yargs": "^17.7.2"
