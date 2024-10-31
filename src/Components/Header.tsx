@@ -96,7 +96,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
           { isAboutMenuOpen &&
             <AboutMenu>
               <AboutMenuItem href="#" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
-              <AboutMenuItem href="/documents/bangpressrelease-fairusage-eng.pdf" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
+              <AboutMenuItem href={`${process.env.PUBLIC_URL}/documents/bangpressrelease-fairusage-eng.pdf`} onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
           { scene.type !== 'home' && scene.type !== 'loading' && <div className='flex relative' ref={menuRef}>
