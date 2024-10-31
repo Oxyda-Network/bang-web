@@ -1,6 +1,7 @@
 import { ChangeEvent, useRef, useState } from 'react';
 import getLabel from '../Locale/GetLabel';
 import AppSettings from '../Model/AppSettings';
+import Env from '../Model/Env';
 import { isLobbyOwner, SceneState } from '../Model/SceneState';
 import { BangConnection } from '../Model/UseBangConnection';
 import { DEFAULT_USER_PROPIC } from '../Scenes/Lobby/LobbyUser';
@@ -96,7 +97,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
           { isAboutMenuOpen &&
             <AboutMenu>
               <AboutMenuItem href="#" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
-              <AboutMenuItem href={`${window.location.origin}/documents/bangpressrelease-fairusage-eng.pdf`} onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
+              <AboutMenuItem href={`${Env.bangClientUrl}/documents/bangpressrelease-fairusage-eng.pdf`} onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
           { scene.type !== 'home' && scene.type !== 'loading' && <div className='flex relative' ref={menuRef}>
