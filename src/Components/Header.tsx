@@ -101,7 +101,6 @@ function Header({ scene, settings, connection }: HeaderProps) {
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
-              <AboutMenuItem href="https://example.com">{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
               <AboutMenuItem onClick={() => handleOpenPdfViewer('/documents/bangpressrelease-fairusage-eng.pdf')}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
