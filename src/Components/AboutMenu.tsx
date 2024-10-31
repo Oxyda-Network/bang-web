@@ -23,3 +23,11 @@ export function AboutMenuItem({ href, children, onClick }: AboutMenuItemProps) {
     </li>
   );
 }
+
+export function AboutMenu({ children }: { children: ReactNode }) {
+  return (
+    <ul className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none">
+      {children}
+    </ul>
+  );
+}
