@@ -101,7 +101,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
-              <AboutMenuItem onClick={() => handleOpenPdfViewer('/documents/bangpressrelease-fairusage-eng.pdf')}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
+              <AboutMenuItem onClick={() => handleOpenPdfViewer('/media/documents/bangpressrelease-fairusage-eng.pdf')}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
           { scene.type !== 'home' && scene.type !== 'loading' && <div className='flex relative' ref={menuRef}>
