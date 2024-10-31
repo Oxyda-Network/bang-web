@@ -96,7 +96,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
-              <AboutMenuItem href="#" onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
+              <AboutMenuItem href={`${Env.bangClientUrl}/documents/bangpressrelease-fairusage-eng.pdf`} onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
               <AboutMenuItem href={`${Env.bangClientUrl}/documents/bangpressrelease-fairusage-eng.pdf`} onClick={handleAboutMenuItemClick}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
