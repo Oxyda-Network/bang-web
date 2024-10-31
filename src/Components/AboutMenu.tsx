@@ -11,7 +11,7 @@ export function AboutMenuItem({ href, children, onClick }: AboutMenuItemProps) {
   return (
     <li>
       <a
-        href="#"
+        href={href}
         onClick={(e) => {
           e.preventDefault();
           onClick(href);
