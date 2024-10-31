@@ -1,14 +1,13 @@
 import { ReactNode } from "react";
 import "./Style/AboutMenu.css";
 
-export
-interface AboutMenuItemProps {
-  href: string;
+export interface AboutMenuItemProps {
+  onClick: () => void;
   children: ReactNode;
 }
 
-export function AboutMenuItem({ href, children }: AboutMenuItemProps) {
-  return <li><a href={href} className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white" target="_blank" rel='noreferrer'>{children}</a></li>;
+export function AboutMenuItem({ onClick, children }: AboutMenuItemProps) {
+  return <li><button onClick={onClick} className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">{children}</button></li>;
 }
 
 export interface AboutMenuProps {

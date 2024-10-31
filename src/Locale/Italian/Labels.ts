@@ -67,6 +67,8 @@ export const LABELS_ITALIAN: LabelRegistry = {
         APP_WELCOME: "Benvenuto in Bang! online con tutte le espansioni!\nGioca gratis adesso con i tuoi amici!",
         DISCLAIMER: "This offer is independent from dV Giochi - daVinci Editrice S.r.l.\ndV Giochi - daVinci Editrice S.r.l. is in no way responsible for the contents.",
         COPYRIGHTS: "BANG! is a - registered - trademark of daVinci Editrice S.r.l.\ndV Giochi is a - registered - trademark of daVinci Editrice S.r.l.",
+        ABOUT_MENU_ABOUT: "About",
+        ABOUT_MENU_DISCLAIMER: "Publisher's Disclaimer",
         LOADING: "Caricamento...",
         RECONNECTING: "Riconnessione...", 
         UNKNOWN_CARD: "(Carta sconosciuta)",
