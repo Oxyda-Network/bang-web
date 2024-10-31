@@ -13,7 +13,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ fileUrl, onClose }) => {
         <button onClick={onClose} className="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
             Close
         </button>
-        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js`}>
+        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.7.0/build/pdf.worker.min.js`}>
             <Viewer fileUrl={fileUrl} />
         </Worker>
         </div>
