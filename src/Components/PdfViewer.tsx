@@ -1,5 +1,7 @@
 import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 interface PdfViewerProps {
     fileUrl: string;
@@ -19,7 +21,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ fileUrl, onClose }) => {
                     <Viewer
                         fileUrl={fileUrl}
                         plugins={[defaultLayoutPluginInstance]}
-                        onDocumentLoadFailed={(error) => console.error('Failed to load PDF document:', error)}
+                        onDocumentLoadFailed={(error: Error) => console.error('Failed to load PDF document:', error)}
                     />
                 </Worker>
             </div>
