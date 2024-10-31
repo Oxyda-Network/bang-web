@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import getLabel from '../Locale/GetLabel';
 import AppSettings from '../Model/AppSettings';
 import { isLobbyOwner, SceneState } from '../Model/SceneState';
@@ -7,7 +7,7 @@ import { DEFAULT_USER_PROPIC } from '../Scenes/Lobby/LobbyUser';
 import { loadFile, PROPIC_SIZE, serializeImage } from '../Utils/ImageSerial';
 import useCloseOnLoseFocus from '../Utils/UseCloseOnLoseFocus';
 import UserMenu, { UserMenuItem } from './UserMenu';
-import AboutMenu, { AboutMenuItem } from './AboutMenu';
+import { AboutMenu, AboutMenuItem } from './AboutMenu';
 import PDFViewer from './PDFViewer';
 
 export interface HeaderProps {
