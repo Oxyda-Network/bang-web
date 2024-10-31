@@ -14,7 +14,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ fileUrl, onClose }) => {
     const viewerProps: ViewerProps = {
         fileUrl: fileUrl,
         plugins: [defaultLayoutPluginInstance],
-        onDocumentLoadFailed: (error: Error) => console.error('Failed to load PDF document:', error),
+        onDocumentLoad: (document) => console.log('PDF document loaded:', document),
     };
 
     return (
