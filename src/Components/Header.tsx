@@ -83,7 +83,7 @@ function Header({ scene, settings, connection }: HeaderProps) {
               onClick={() => setIsAboutMenuOpen(value => !value)}
               type="button" className="inline-flex items-center p-0.5 md:p-2 ml-1 text-sm rounded-lg focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600">
               <span className="sr-only">Open about menu</span>
-              <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M18 8a8 8 0 11-16 0 8 8 0 0116 0zm-8 4a1 1 0 100-2 1 1 0 000 2zm.25-4a.75.75 0 00-1.5 0v.25a.75.75 0 001.5 0V8z" clipRule="evenodd"></path></svg>
+                <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.25-4a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zm-.25-2a.75.75 0 01-1.5 0v-1a.75.75 0 011.5 0v1zm0-3a1 1 0 10-2 0 1 1 0 002 0z" clipRule="evenodd"></path></svg>
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
