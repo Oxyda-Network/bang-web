@@ -123,7 +123,9 @@ function Header({ scene, settings, connection }: HeaderProps) {
           </div>}
         </div>
       </div>
-      {isPdfViewerOpen && pdfFileUrl && <PdfViewer fileUrl={pdfFileUrl} onClose={handleClosePdfViewer} />}
+      {isPdfViewerOpen && pdfFileUrl && (
+        <PdfViewer fileUrl={pdfFileUrl} onClose={handleClosePdfViewer} />
+      )}
     </nav>
   )
 }
