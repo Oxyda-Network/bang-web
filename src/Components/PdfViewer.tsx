@@ -16,6 +16,7 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
         onClose();
         }
     }
+    
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
         document.removeEventListener('mousedown', handleClickOutside);
