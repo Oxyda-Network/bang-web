@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useRef } from 'react';
 import getLabel from '../Locale/GetLabel';
 import AppSettings from '../Model/AppSettings';
 import { isLobbyOwner, SceneState } from '../Model/SceneState';
@@ -8,7 +8,6 @@ import { loadFile, PROPIC_SIZE, serializeImage } from '../Utils/ImageSerial';
 import useCloseOnLoseFocus from '../Utils/UseCloseOnLoseFocus';
 import UserMenu, { UserMenuItem } from './UserMenu';
 import AboutMenu, { AboutMenuItem } from './AboutMenu';
-import PdfViewer from './PdfViewer';
 
 export interface HeaderProps {
   scene: SceneState;
@@ -18,19 +17,6 @@ export interface HeaderProps {
 
 function Header({ scene, settings, connection }: HeaderProps) {
   const inputFile = useRef<HTMLInputElement>(null);
-
-  const [isPdfViewerOpen, setIsPdfViewerOpen] = useState(false);
-  const [pdfFileUrl, setPdfFileUrl] = useState<string | null>(null);
-
-  const handleOpenPdfViewer = (fileUrl: string) => {
-    setPdfFileUrl(fileUrl);
-    setIsPdfViewerOpen(true);
-  };
-
-  const handleClosePdfViewer = () => {
-    setPdfFileUrl(null);
-    setIsPdfViewerOpen(false);
-  };
   
   const [isMenuOpen, setIsMenuOpen, menuRef] = useCloseOnLoseFocus<HTMLDivElement>();
   const [isAboutMenuOpen, setIsAboutMenuOpen, AboutMenuRef] = useCloseOnLoseFocus<HTMLDivElement>();
@@ -101,7 +87,8 @@ function Header({ scene, settings, connection }: HeaderProps) {
             </button>
           { isAboutMenuOpen &&
             <AboutMenu>
-              <AboutMenuItem onClick={() => handleOpenPdfViewer('/media/documents/bangpressrelease-fairusage-eng.pdf')}>{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
+              <AboutMenuItem href="https://example.com">{getLabel('ui', 'ABOUT_MENU_ABOUT')}</AboutMenuItem>
+              <AboutMenuItem href="https://example.com">{getLabel('ui', 'ABOUT_MENU_DISCLAIMER')}</AboutMenuItem>
             </AboutMenu> }
           </div>}
           { scene.type !== 'home' && scene.type !== 'loading' && <div className='flex relative' ref={menuRef}>
@@ -123,7 +110,6 @@ function Header({ scene, settings, connection }: HeaderProps) {
           </div>}
         </div>
       </div>
-      {isPdfViewerOpen && pdfFileUrl && <PdfViewer fileUrl={pdfFileUrl} onClose={handleClosePdfViewer} />}
     </nav>
   )
 }
