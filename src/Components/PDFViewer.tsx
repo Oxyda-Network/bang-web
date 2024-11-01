@@ -42,7 +42,7 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
                     Close
                 </button>
                 <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} />
+                    <Page pageNumber={pageNumber} width={800}/>
                 </Document>
                 <div className="flex justify-between mt-4">
                     <button
