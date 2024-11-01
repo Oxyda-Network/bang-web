@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
@@ -11,6 +11,8 @@ interface PDFViewerProps {
 
 export default function PDFViewer({ file, onClose }: PDFViewerProps) {
     const viewerRef = useRef<HTMLDivElement>(null);
+    const [numPages, setNumPages] = useState<number | null>(null);
+    const [pageNumber, setPageNumber] = useState(1);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -25,15 +27,44 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
         };
     }, [onClose]);
 
+    function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
+        setNumPages(numPages);
+    }
+
+    function changePage(offset: number) {
+        setPageNumber(prevPageNumber => prevPageNumber + offset);
+    }
+
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div ref={viewerRef} className="bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full">
+            <div ref={viewerRef} className="bg-white p-4 rounded-lg shadow-lg max-w-5xl w-full overflow-auto">
                 <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
                     Close
                 </button>
-                <Document file={file}>
-                    <Page pageNumber={1} />
+                <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page pageNumber={pageNumber} />
                 </Document>
+                <div className="flex justify-between mt-4">
+                    <button
+                        type="button"
+                        disabled={pageNumber <= 1}
+                        onClick={() => changePage(-1)}
+                        className="text-gray-500 hover:text-gray-700"
+                    >
+                        Previous
+                    </button>
+                    <p>
+                        Page {pageNumber} of {numPages}
+                    </p>
+                    <button
+                        type="button"
+                        disabled={pageNumber >= (numPages || 0)}
+                        onClick={() => changePage(1)}
+                        className="text-gray-500 hover:text-gray-700"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );
