@@ -37,8 +37,8 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div ref={viewerRef} className="bg-white p-4 rounded-lg shadow-lg max-w-5xl w-full h-5/6 overflow-auto">
-                <button onClick={onClose} className="text-gray-500 hover:text-gray-700 mb-4">
+            <div ref={viewerRef} className="bg-white p-4 rounded-lg shadow-lg max-w-5xl w-11/12 h-5/6 overflow-auto">
+                <button onClick={onClose} className="text-black-500 hover:text-black-700 mb-4">
                     Close
                 </button>
                 <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
@@ -49,7 +49,7 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
                         type="button"
                         disabled={pageNumber <= 1}
                         onClick={() => changePage(-1)}
-                        className="text-gray-500 hover:text-gray-700"
+                        className="text-black-500 hover:text-black-700"
                     >
                         Previous
                     </button>
@@ -60,7 +60,7 @@ export default function PDFViewer({ file, onClose }: PDFViewerProps) {
                         type="button"
                         disabled={pageNumber >= (numPages || 0)}
                         onClick={() => changePage(1)}
-                        className="text-gray-500 hover:text-gray-700"
+                        className="text-black-500 hover:text-black-700"
                     >
                         Next
                     </button>
