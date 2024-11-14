@@ -41,7 +41,7 @@ export const LABELS_ITALIAN: LabelRegistry = {
         thebullet:              "Dynamite Box",
         dodgecity:              "Dodge City",
         valleyofshadows:        "Valley Of Shadows",
-        udolistinu:             "Valley Of Shadows (versione originale)",
+        udolistinu:             "Valley of Shadows (versione originale)",
         greattrainrobbery:      "The Great Train Robbery",
         wildwestshow:           "Wild West Show",
         goldrush:               "Gold Rush",
@@ -64,9 +64,11 @@ export const LABELS_ITALIAN: LabelRegistry = {
 
     ui: {
         APP_TITLE: "Bang!",
-        APP_WELCOME: "Benvenuto in bang.salvoserver.it,\nBang! online con tutte le espansioni!\nGioca gratis adesso con i tuoi amici!",
-        DISCORD_LINK: "Entra nel discord ufficiale",
-        DONATE_PAYPAL: "Fai una donazione",
+        APP_WELCOME: "Benvenuto in Bang! online con tutte le espansioni!\nGioca gratis adesso con i tuoi amici!",
+        DISCLAIMER: "This offer is independent from dV Giochi - daVinci Editrice S.r.l.\ndV Giochi - daVinci Editrice S.r.l. is in no way responsible for the contents.",
+        COPYRIGHTS: "BANG! is a - registered - trademark of daVinci Editrice S.r.l.\ndV Giochi is a - registered - trademark of daVinci Editrice S.r.l.",
+        ABOUT_MENU_ABOUT: "About",
+        ABOUT_MENU_DISCLAIMER: "Publisher's Disclaimer",
         LOADING: "Caricamento...",
         RECONNECTING: "Riconnessione...", 
         UNKNOWN_CARD: "(Carta sconosciuta)",

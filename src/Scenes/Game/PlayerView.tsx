@@ -217,7 +217,7 @@ export default function PlayerView({ playerRef, user, player, handleRejoin }: Pl
                 : <div className="player-icon icon-dead"/> ) }
         </div>
         <div className='player-propic'>
-            <LobbyUser user={user} align='horizontal' noUserIcons>
+            <LobbyUser user={user} align='horizontal'>
                 { canRejoin && <Button className="button-rejoin" onClick={handleRejoin} color="green">{getLabel('ui','BUTTON_REJOIN')}</Button> }
             </LobbyUser>
         </div>
